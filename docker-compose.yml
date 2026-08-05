@@ -1,0 +1,45 @@
+services:
+  otelcol:
+    image: quay.io/signalfx/splunk-otel-collector:latest
+    command: ["--config=/etc/otelcol/config.yaml"]
+    volumes:
+      - ./otel-collector-config.yaml:/etc/otelcol/config.yaml:ro
+    environment:
+      SPLUNK_REALM: ${SPLUNK_REALM}
+      SPLUNK_ACCESS_TOKEN: ${SPLUNK_ACCESS_TOKEN}
+      SPLUNK_RUM_ACCESS_TOKEN: ${SPLUNK_RUM_ACCESS_TOKEN}
+      SPLUNK_HEC_TOKEN: ${SPLUNK_HEC_TOKEN}
+      SPLUNK_MEMORY_LIMIT_MIB: "400"
+    ports:
+      - "127.0.0.1:4318:4318"
+      - "127.0.0.1:4317:4317"
+      - "127.0.0.1:13133:13133"
+    depends_on:
+      splunk:
+        condition: service_healthy
+    restart: unless-stopped
+
+  splunk:
+    image: splunk/splunk:latest
+    platform: linux/amd64   # splunk/splunk has no arm64 image; Rosetta emulates it on Apple Silicon
+    environment:
+      SPLUNK_START_ARGS: "--accept-license"
+      SPLUNK_GENERAL_TERMS: "--accept-sgt-current-at-splunk-com"   # required by splunk/splunk:latest
+      SPLUNK_PASSWORD: ${SPLUNK_LOCAL_PASSWORD}
+      SPLUNK_HEC_TOKEN: ${SPLUNK_HEC_TOKEN}
+    ports:
+      - "127.0.0.1:8000:8000"
+      - "127.0.0.1:8088:8088"
+    volumes:
+      - splunk-data:/opt/splunk/var
+      - ./splunk-defaults.yml:/tmp/defaults/default.yml:ro
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:8000/services/server/info", "-u", "admin:${SPLUNK_LOCAL_PASSWORD}"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 60s
+    restart: unless-stopped
+
+volumes:
+  splunk-data:

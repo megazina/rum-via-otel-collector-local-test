@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RUM Local Test</title>
+
+  <!--
+    Splunk RUM browser SDK loaded synchronously from CDN.
+    beaconEndpoint points to the local OTel Collector over plain HTTP —
+    no TLS cert required for localhost.
+  -->
+  <!-- Main Splunk RUM SDK — must be loaded before the session recorder -->
+  <script
+    src="https://cdn.observability.splunkcloud.com/o11y-gdi-rum/v3/splunk-otel-web.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <!-- Session replay recorder — must match the major version of splunk-otel-web.js -->
+  <script
+    src="https://cdn.observability.splunkcloud.com/o11y-gdi-rum/v3/splunk-otel-web-session-recorder.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <script>
+    // Route traces through local OTel Collector → Splunk O11y Cloud + local Splunk Enterprise HEC.
+    // allowInsecureBeacon required for plain HTTP beaconEndpoint on localhost.
+    SplunkRum.init({
+      applicationName: 'local-rum-test',
+      deploymentEnvironment: 'local',
+      version: '1.0.0',
+      rumAccessToken: 'REPLACE_WITH_RUM_TOKEN',
+      beaconEndpoint: 'http://localhost:4318/v1/traces',
+      allowInsecureBeacon: true,
+      exporter: { otlp: true },
+    });
+
+    // Session replay → OTLP logs on the collector → O11y (/v1/rumreplay) + Enterprise HEC.
+    // Use /v1/logs (OTLP receiver), not /v1/rumreplay (that path is only on rum-ingest.*).
+    SplunkSessionRecorder.init({
+      rumAccessToken: 'REPLACE_WITH_RUM_TOKEN',
+      beaconEndpoint: 'http://localhost:4318/v1/logs',
+      allowInsecureBeacon: true,
+      recorder: 'splunk',
+      features: {
+        backgroundService: true,
+        cacheAssets: true,
+        packAssets: {
+          fonts: true,
+          styles: true,
+          images: { onlyViewportImages: true, pack: true, quality: 0.7 },
+        },
+      },
+    });
+  </script>
+
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 60px auto; padding: 0 1rem; color: #1a1a2e; }
+    h1   { font-size: 1.4rem; margin-bottom: 0.5rem; }
+    p    { color: #555; font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+    button {
+      padding: 0.6rem 1.2rem; border: none; border-radius: 6px;
+      background: #3b82f6; color: #fff; font-size: 0.9rem; cursor: pointer;
+    }
+    button:hover { background: #2563eb; }
+    #log {
+      margin-top: 1.5rem; background: #f1f5f9; border-radius: 6px;
+      padding: 0.75rem 1rem; font-family: monospace; font-size: 0.8rem;
+      min-height: 4rem; white-space: pre-wrap; color: #334155;
+    }
+  </style>
+</head>
+<body>
+  <h1>RUM Local Test Page</h1>
+  <p>
+    Clicking the buttons below generates browser spans and session replay events.<br>
+    Check your browser's <strong>Network</strong> tab for POST requests to
+    <code>http://localhost:4318/v1/traces</code> and
+    <code>http://localhost:4318/v1/logs</code> (session replay via collector).
+    Verify data in Splunk O11y Cloud RUM → Sessions and in local Splunk Enterprise (localhost:8000):
+    traces <code>source=rum</code>, session replay <code>source=rum-replay</code>.
+  </p>
+
+  <div class="actions">
+    <button onclick="doFetch()">Fetch (success)</button>
+    <button onclick="doFetchError()">Fetch (error)</button>
+    <button onclick="doCustomSpan()">Custom span</button>
+    <button onclick="doNavigation()">Navigation</button>
+  </div>
+
+  <div id="log">Waiting for actions…</div>
+
+  <script>
+    const log = document.getElementById('log');
+    function append(msg) {
+      const ts = new Date().toISOString().slice(11, 23);
+      log.textContent = `[${ts}] ${msg}\n` + log.textContent;
+    }
+
+    function doFetch() {
+      append('Fetching https://httpbin.org/get …');
+      fetch('https://httpbin.org/get')
+        .then(r => r.json())
+        .then(() => append('Fetch OK — span sent to collector'))
+        .catch(e => append('Fetch failed: ' + e.message));
+    }
+
+    function doFetchError() {
+      append('Fetching /this-does-not-exist …');
+      fetch('/this-does-not-exist')
+        .then(r => append('Response status: ' + r.status + ' — span sent'))
+        .catch(e => append('Fetch error: ' + e.message));
+    }
+
+    function doCustomSpan() {
+      const tracer = SplunkRum.provider
+        ? SplunkRum.provider.getTracer('local-test')
+        : null;
+
+      if (!tracer) {
+        append('Tracer not ready yet — try again in a second');
+        return;
+      }
+
+      const span = tracer.startSpan('button.click', {
+        attributes: { 'ui.component': 'custom-span-button', 'test': true },
+      });
+      setTimeout(() => {
+        span.end();
+        append('Custom span ended — check O11y Cloud RUM');
+      }, 50);
+    }
+
+    function doNavigation() {
+      append('Pushing history entry …');
+      history.pushState({}, '', '?nav=' + Date.now());
+      append('Navigation span should appear in RUM session');
+    }
+  </script>
+</body>
+</html>

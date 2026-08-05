@@ -1,0 +1,8 @@
+# Credentials — never commit
+.env
+
+# Docker volumes (if ever exported)
+splunk-data/
+
+# macOS
+.DS_Store

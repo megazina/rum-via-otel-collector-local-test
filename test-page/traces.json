@@ -1,0 +1,1146 @@
+{
+    "resourceSpans": [
+        {
+            "resource": {
+                "attributes": [
+                    {
+                        "key": "telemetry.sdk.language",
+                        "value": {
+                            "stringValue": "webjs"
+                        }
+                    },
+                    {
+                        "key": "telemetry.sdk.name",
+                        "value": {
+                            "stringValue": "@splunk/otel-web"
+                        }
+                    },
+                    {
+                        "key": "telemetry.sdk.version",
+                        "value": {
+                            "stringValue": "3.0.0"
+                        }
+                    },
+                    {
+                        "key": "process.runtime.name",
+                        "value": {
+                            "stringValue": "browser"
+                        }
+                    },
+                    {
+                        "key": "app",
+                        "value": {
+                            "stringValue": "local-rum-test"
+                        }
+                    },
+                    {
+                        "key": "splunk.rumVersion",
+                        "value": {
+                            "stringValue": "3.0.0"
+                        }
+                    },
+                    {
+                        "key": "splunk.scriptInstance",
+                        "value": {
+                            "stringValue": "1e48713f63043780"
+                        }
+                    },
+                    {
+                        "key": "browser.instance.id",
+                        "value": {
+                            "stringValue": "063a94fd1c192c88"
+                        }
+                    }
+                ],
+                "droppedAttributesCount": 0
+            },
+            "scopeSpans": [
+                {
+                    "scope": {
+                        "name": "route",
+                        "version": "1"
+                    },
+                    "spans": [
+                        {
+                            "traceId": "64727ad3cc0c8d26b31a681782c8664e",
+                            "spanId": "289d8afec9068fcc",
+                            "name": "routeChange",
+                            "kind": 1,
+                            "startTimeUnixNano": "1785911604578000000",
+                            "endTimeUnixNano": "1785911604756500000",
+                            "attributes": [
+                                {
+                                    "key": "location.href",
+                                    "value": {
+                                        "stringValue": "http://localhost:8080/?nav=1785911604577"
+                                    }
+                                },
+                                {
+                                    "key": "deployment.environment",
+                                    "value": {
+                                        "stringValue": "local"
+                                    }
+                                },
+                                {
+                                    "key": "environment",
+                                    "value": {
+                                        "stringValue": "local"
+                                    }
+                                },
+                                {
+                                    "key": "app.version",
+                                    "value": {
+                                        "stringValue": "1.0.0"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.is_automated",
+                                    "value": {
+                                        "boolValue": false
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.is_bot",
+                                    "value": {
+                                        "boolValue": false
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.language",
+                                    "value": {
+                                        "stringValue": "en-GB"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.mobile",
+                                    "value": {
+                                        "boolValue": false
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.original",
+                                    "value": {
+                                        "stringValue": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.os.name",
+                                    "value": {
+                                        "stringValue": "macOS"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.os.version",
+                                    "value": {
+                                        "stringValue": "26.5.2"
+                                    }
+                                },
+                                {
+                                    "key": "splunk.rumSessionId",
+                                    "value": {
+                                        "stringValue": "ecaf929efb403947b597972ab3e39035"
+                                    }
+                                },
+                                {
+                                    "key": "user.anonymous_id",
+                                    "value": {
+                                        "stringValue": "07e25b7451f91087f90a6f8727f8eb66"
+                                    }
+                                },
+                                {
+                                    "key": "browser.instance.visibility_state",
+                                    "value": {
+                                        "stringValue": "visible"
+                                    }
+                                },
+                                {
+                                    "key": "component",
+                                    "value": {
+                                        "stringValue": "user-interaction"
+                                    }
+                                },
+                                {
+                                    "key": "prev.href",
+                                    "value": {
+                                        "stringValue": "http://localhost:8080/?nav=1785911604368"
+                                    }
+                                }
+                            ],
+                            "droppedAttributesCount": 0,
+                            "events": [],
+                            "droppedEventsCount": 0,
+                            "status": {
+                                "code": 0
+                            },
+                            "links": [],
+                            "droppedLinksCount": 0
+                        },
+                        {
+                            "traceId": "621228abf528867cf9ba1cae0202d20d",
+                            "spanId": "e7af131c5fc9d653",
+                            "name": "routeChange",
+                            "kind": 1,
+                            "startTimeUnixNano": "1785911604756000000",
+                            "endTimeUnixNano": "1785911604922500000",
+                            "attributes": [
+                                {
+                                    "key": "location.href",
+                                    "value": {
+                                        "stringValue": "http://localhost:8080/?nav=1785911604756"
+                                    }
+                                },
+                                {
+                                    "key": "deployment.environment",
+                                    "value": {
+                                        "stringValue": "local"
+                                    }
+                                },
+                                {
+                                    "key": "environment",
+                                    "value": {
+                                        "stringValue": "local"
+                                    }
+                                },
+                                {
+                                    "key": "app.version",
+                                    "value": {
+                                        "stringValue": "1.0.0"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.is_automated",
+                                    "value": {
+                                        "boolValue": false
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.is_bot",
+                                    "value": {
+                                        "boolValue": false
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.language",
+                                    "value": {
+                                        "stringValue": "en-GB"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.mobile",
+                                    "value": {
+                                        "boolValue": false
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.original",
+                                    "value": {
+                                        "stringValue": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.os.name",
+                                    "value": {
+                                        "stringValue": "macOS"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.os.version",
+                                    "value": {
+                                        "stringValue": "26.5.2"
+                                    }
+                                },
+                                {
+                                    "key": "splunk.rumSessionId",
+                                    "value": {
+                                        "stringValue": "ecaf929efb403947b597972ab3e39035"
+                                    }
+                                },
+                                {
+                                    "key": "user.anonymous_id",
+                                    "value": {
+                                        "stringValue": "07e25b7451f91087f90a6f8727f8eb66"
+                                    }
+                                },
+                                {
+                                    "key": "browser.instance.visibility_state",
+                                    "value": {
+                                        "stringValue": "visible"
+                                    }
+                                },
+                                {
+                                    "key": "component",
+                                    "value": {
+                                        "stringValue": "user-interaction"
+                                    }
+                                },
+                                {
+                                    "key": "prev.href",
+                                    "value": {
+                                        "stringValue": "http://localhost:8080/?nav=1785911604577"
+                                    }
+                                }
+                            ],
+                            "droppedAttributesCount": 0,
+                            "events": [],
+                            "droppedEventsCount": 0,
+                            "status": {
+                                "code": 0
+                            },
+                            "links": [],
+                            "droppedLinksCount": 0
+                        },
+                        {
+                            "traceId": "24fa84e2cf677fba3d517f440b5ab66f",
+                            "spanId": "732fd8c651e52592",
+                            "name": "routeChange",
+                            "kind": 1,
+                            "startTimeUnixNano": "1785911604923000000",
+                            "endTimeUnixNano": "1785911605104300049",
+                            "attributes": [
+                                {
+                                    "key": "location.href",
+                                    "value": {
+                                        "stringValue": "http://localhost:8080/?nav=1785911604923"
+                                    }
+                                },
+                                {
+                                    "key": "deployment.environment",
+                                    "value": {
+                                        "stringValue": "local"
+                                    }
+                                },
+                                {
+                                    "key": "environment",
+                                    "value": {
+                                        "stringValue": "local"
+                                    }
+                                },
+                                {
+                                    "key": "app.version",
+                                    "value": {
+                                        "stringValue": "1.0.0"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.is_automated",
+                                    "value": {
+                                        "boolValue": false
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.is_bot",
+                                    "value": {
+                                        "boolValue": false
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.language",
+                                    "value": {
+                                        "stringValue": "en-GB"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.mobile",
+                                    "value": {
+                                        "boolValue": false
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.original",
+                                    "value": {
+                                        "stringValue": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.os.name",
+                                    "value": {
+                                        "stringValue": "macOS"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.os.version",
+                                    "value": {
+                                        "stringValue": "26.5.2"
+                                    }
+                                },
+                                {
+                                    "key": "splunk.rumSessionId",
+                                    "value": {
+                                        "stringValue": "ecaf929efb403947b597972ab3e39035"
+                                    }
+                                },
+                                {
+                                    "key": "user.anonymous_id",
+                                    "value": {
+                                        "stringValue": "07e25b7451f91087f90a6f8727f8eb66"
+                                    }
+                                },
+                                {
+                                    "key": "browser.instance.visibility_state",
+                                    "value": {
+                                        "stringValue": "visible"
+                                    }
+                                },
+                                {
+                                    "key": "component",
+                                    "value": {
+                                        "stringValue": "user-interaction"
+                                    }
+                                },
+                                {
+                                    "key": "prev.href",
+                                    "value": {
+                                        "stringValue": "http://localhost:8080/?nav=1785911604756"
+                                    }
+                                }
+                            ],
+                            "droppedAttributesCount": 0,
+                            "events": [],
+                            "droppedEventsCount": 0,
+                            "status": {
+                                "code": 0
+                            },
+                            "links": [],
+                            "droppedLinksCount": 0
+                        }
+                    ]
+                },
+                {
+                    "scope": {
+                        "name": "splunk-frustration-signals",
+                        "version": "3.0.0"
+                    },
+                    "spans": [
+                        {
+                            "traceId": "088c5718fbd3d0818eca53b1fd26aa98",
+                            "spanId": "7265b64aff8f3e8b",
+                            "name": "frustration",
+                            "kind": 1,
+                            "startTimeUnixNano": "1785911604922000000",
+                            "endTimeUnixNano": "1785911604922000000",
+                            "attributes": [
+                                {
+                                    "key": "location.href",
+                                    "value": {
+                                        "stringValue": "http://localhost:8080/?nav=1785911604756"
+                                    }
+                                },
+                                {
+                                    "key": "deployment.environment",
+                                    "value": {
+                                        "stringValue": "local"
+                                    }
+                                },
+                                {
+                                    "key": "environment",
+                                    "value": {
+                                        "stringValue": "local"
+                                    }
+                                },
+                                {
+                                    "key": "app.version",
+                                    "value": {
+                                        "stringValue": "1.0.0"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.is_automated",
+                                    "value": {
+                                        "boolValue": false
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.is_bot",
+                                    "value": {
+                                        "boolValue": false
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.language",
+                                    "value": {
+                                        "stringValue": "en-GB"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.mobile",
+                                    "value": {
+                                        "boolValue": false
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.original",
+                                    "value": {
+                                        "stringValue": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.os.name",
+                                    "value": {
+                                        "stringValue": "macOS"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.os.version",
+                                    "value": {
+                                        "stringValue": "26.5.2"
+                                    }
+                                },
+                                {
+                                    "key": "splunk.rumSessionId",
+                                    "value": {
+                                        "stringValue": "ecaf929efb403947b597972ab3e39035"
+                                    }
+                                },
+                                {
+                                    "key": "user.anonymous_id",
+                                    "value": {
+                                        "stringValue": "07e25b7451f91087f90a6f8727f8eb66"
+                                    }
+                                },
+                                {
+                                    "key": "browser.instance.visibility_state",
+                                    "value": {
+                                        "stringValue": "visible"
+                                    }
+                                },
+                                {
+                                    "key": "frustration_type",
+                                    "value": {
+                                        "stringValue": "rage"
+                                    }
+                                },
+                                {
+                                    "key": "interaction_type",
+                                    "value": {
+                                        "stringValue": "click"
+                                    }
+                                },
+                                {
+                                    "key": "component",
+                                    "value": {
+                                        "stringValue": "user-interaction"
+                                    }
+                                },
+                                {
+                                    "key": "target_xpath",
+                                    "value": {
+                                        "stringValue": "//html/body/div/button[4]"
+                                    }
+                                },
+                                {
+                                    "key": "target_text",
+                                    "value": {
+                                        "stringValue": "<button>"
+                                    }
+                                }
+                            ],
+                            "droppedAttributesCount": 0,
+                            "events": [],
+                            "droppedEventsCount": 0,
+                            "status": {
+                                "code": 0
+                            },
+                            "links": [],
+                            "droppedLinksCount": 0
+                        },
+                        {
+                            "traceId": "1a978442a062d338fe92961dbbc7d934",
+                            "spanId": "29526ee516de9c4d",
+                            "name": "frustration",
+                            "kind": 1,
+                            "startTimeUnixNano": "1785911606182000000",
+                            "endTimeUnixNano": "1785911606182000000",
+                            "attributes": [
+                                {
+                                    "key": "location.href",
+                                    "value": {
+                                        "stringValue": "http://localhost:8080/?nav=1785911605104"
+                                    }
+                                },
+                                {
+                                    "key": "deployment.environment",
+                                    "value": {
+                                        "stringValue": "local"
+                                    }
+                                },
+                                {
+                                    "key": "environment",
+                                    "value": {
+                                        "stringValue": "local"
+                                    }
+                                },
+                                {
+                                    "key": "app.version",
+                                    "value": {
+                                        "stringValue": "1.0.0"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.is_automated",
+                                    "value": {
+                                        "boolValue": false
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.is_bot",
+                                    "value": {
+                                        "boolValue": false
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.language",
+                                    "value": {
+                                        "stringValue": "en-GB"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.mobile",
+                                    "value": {
+                                        "boolValue": false
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.original",
+                                    "value": {
+                                        "stringValue": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.os.name",
+                                    "value": {
+                                        "stringValue": "macOS"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.os.version",
+                                    "value": {
+                                        "stringValue": "26.5.2"
+                                    }
+                                },
+                                {
+                                    "key": "splunk.rumSessionId",
+                                    "value": {
+                                        "stringValue": "ecaf929efb403947b597972ab3e39035"
+                                    }
+                                },
+                                {
+                                    "key": "user.anonymous_id",
+                                    "value": {
+                                        "stringValue": "07e25b7451f91087f90a6f8727f8eb66"
+                                    }
+                                },
+                                {
+                                    "key": "browser.instance.visibility_state",
+                                    "value": {
+                                        "stringValue": "visible"
+                                    }
+                                },
+                                {
+                                    "key": "frustration_type",
+                                    "value": {
+                                        "stringValue": "rage"
+                                    }
+                                },
+                                {
+                                    "key": "interaction_type",
+                                    "value": {
+                                        "stringValue": "click"
+                                    }
+                                },
+                                {
+                                    "key": "component",
+                                    "value": {
+                                        "stringValue": "user-interaction"
+                                    }
+                                },
+                                {
+                                    "key": "target_xpath",
+                                    "value": {
+                                        "stringValue": "//html/body/div/button[3]"
+                                    }
+                                },
+                                {
+                                    "key": "target_text",
+                                    "value": {
+                                        "stringValue": "<button>"
+                                    }
+                                }
+                            ],
+                            "droppedAttributesCount": 0,
+                            "events": [],
+                            "droppedEventsCount": 0,
+                            "status": {
+                                "code": 0
+                            },
+                            "links": [],
+                            "droppedLinksCount": 0
+                        }
+                    ]
+                },
+                {
+                    "scope": {
+                        "name": "local-test"
+                    },
+                    "spans": [
+                        {
+                            "traceId": "8d22e60ddb7179d267abc30eeff28fa5",
+                            "spanId": "c5f51174ab82a91f",
+                            "name": "button.click",
+                            "kind": 1,
+                            "startTimeUnixNano": "1785911605656000000",
+                            "endTimeUnixNano": "1785911605707500000",
+                            "attributes": [
+                                {
+                                    "key": "ui.component",
+                                    "value": {
+                                        "stringValue": "custom-span-button"
+                                    }
+                                },
+                                {
+                                    "key": "test",
+                                    "value": {
+                                        "boolValue": true
+                                    }
+                                },
+                                {
+                                    "key": "location.href",
+                                    "value": {
+                                        "stringValue": "http://localhost:8080/?nav=1785911605104"
+                                    }
+                                },
+                                {
+                                    "key": "deployment.environment",
+                                    "value": {
+                                        "stringValue": "local"
+                                    }
+                                },
+                                {
+                                    "key": "environment",
+                                    "value": {
+                                        "stringValue": "local"
+                                    }
+                                },
+                                {
+                                    "key": "app.version",
+                                    "value": {
+                                        "stringValue": "1.0.0"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.is_automated",
+                                    "value": {
+                                        "boolValue": false
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.is_bot",
+                                    "value": {
+                                        "boolValue": false
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.language",
+                                    "value": {
+                                        "stringValue": "en-GB"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.mobile",
+                                    "value": {
+                                        "boolValue": false
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.original",
+                                    "value": {
+                                        "stringValue": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.os.name",
+                                    "value": {
+                                        "stringValue": "macOS"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.os.version",
+                                    "value": {
+                                        "stringValue": "26.5.2"
+                                    }
+                                },
+                                {
+                                    "key": "splunk.rumSessionId",
+                                    "value": {
+                                        "stringValue": "ecaf929efb403947b597972ab3e39035"
+                                    }
+                                },
+                                {
+                                    "key": "user.anonymous_id",
+                                    "value": {
+                                        "stringValue": "07e25b7451f91087f90a6f8727f8eb66"
+                                    }
+                                },
+                                {
+                                    "key": "browser.instance.visibility_state",
+                                    "value": {
+                                        "stringValue": "visible"
+                                    }
+                                }
+                            ],
+                            "droppedAttributesCount": 0,
+                            "events": [],
+                            "droppedEventsCount": 0,
+                            "status": {
+                                "code": 0
+                            },
+                            "links": [],
+                            "droppedLinksCount": 0
+                        },
+                        {
+                            "traceId": "9756176ff8ed4832cd5bc07ada5bdc18",
+                            "spanId": "58c83721939bcb11",
+                            "name": "button.click",
+                            "kind": 1,
+                            "startTimeUnixNano": "1785911605851000000",
+                            "endTimeUnixNano": "1785911605902600000",
+                            "attributes": [
+                                {
+                                    "key": "ui.component",
+                                    "value": {
+                                        "stringValue": "custom-span-button"
+                                    }
+                                },
+                                {
+                                    "key": "test",
+                                    "value": {
+                                        "boolValue": true
+                                    }
+                                },
+                                {
+                                    "key": "location.href",
+                                    "value": {
+                                        "stringValue": "http://localhost:8080/?nav=1785911605104"
+                                    }
+                                },
+                                {
+                                    "key": "deployment.environment",
+                                    "value": {
+                                        "stringValue": "local"
+                                    }
+                                },
+                                {
+                                    "key": "environment",
+                                    "value": {
+                                        "stringValue": "local"
+                                    }
+                                },
+                                {
+                                    "key": "app.version",
+                                    "value": {
+                                        "stringValue": "1.0.0"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.is_automated",
+                                    "value": {
+                                        "boolValue": false
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.is_bot",
+                                    "value": {
+                                        "boolValue": false
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.language",
+                                    "value": {
+                                        "stringValue": "en-GB"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.mobile",
+                                    "value": {
+                                        "boolValue": false
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.original",
+                                    "value": {
+                                        "stringValue": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.os.name",
+                                    "value": {
+                                        "stringValue": "macOS"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.os.version",
+                                    "value": {
+                                        "stringValue": "26.5.2"
+                                    }
+                                },
+                                {
+                                    "key": "splunk.rumSessionId",
+                                    "value": {
+                                        "stringValue": "ecaf929efb403947b597972ab3e39035"
+                                    }
+                                },
+                                {
+                                    "key": "user.anonymous_id",
+                                    "value": {
+                                        "stringValue": "07e25b7451f91087f90a6f8727f8eb66"
+                                    }
+                                },
+                                {
+                                    "key": "browser.instance.visibility_state",
+                                    "value": {
+                                        "stringValue": "visible"
+                                    }
+                                }
+                            ],
+                            "droppedAttributesCount": 0,
+                            "events": [],
+                            "droppedEventsCount": 0,
+                            "status": {
+                                "code": 0
+                            },
+                            "links": [],
+                            "droppedLinksCount": 0
+                        },
+                        {
+                            "traceId": "575c14755ac6fad137cd1f894e871726",
+                            "spanId": "f783231cf68d2d6c",
+                            "name": "button.click",
+                            "kind": 1,
+                            "startTimeUnixNano": "1785911606001000000",
+                            "endTimeUnixNano": "1785911606051700000",
+                            "attributes": [
+                                {
+                                    "key": "ui.component",
+                                    "value": {
+                                        "stringValue": "custom-span-button"
+                                    }
+                                },
+                                {
+                                    "key": "test",
+                                    "value": {
+                                        "boolValue": true
+                                    }
+                                },
+                                {
+                                    "key": "location.href",
+                                    "value": {
+                                        "stringValue": "http://localhost:8080/?nav=1785911605104"
+                                    }
+                                },
+                                {
+                                    "key": "deployment.environment",
+                                    "value": {
+                                        "stringValue": "local"
+                                    }
+                                },
+                                {
+                                    "key": "environment",
+                                    "value": {
+                                        "stringValue": "local"
+                                    }
+                                },
+                                {
+                                    "key": "app.version",
+                                    "value": {
+                                        "stringValue": "1.0.0"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.is_automated",
+                                    "value": {
+                                        "boolValue": false
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.is_bot",
+                                    "value": {
+                                        "boolValue": false
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.language",
+                                    "value": {
+                                        "stringValue": "en-GB"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.mobile",
+                                    "value": {
+                                        "boolValue": false
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.original",
+                                    "value": {
+                                        "stringValue": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.os.name",
+                                    "value": {
+                                        "stringValue": "macOS"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.os.version",
+                                    "value": {
+                                        "stringValue": "26.5.2"
+                                    }
+                                },
+                                {
+                                    "key": "splunk.rumSessionId",
+                                    "value": {
+                                        "stringValue": "ecaf929efb403947b597972ab3e39035"
+                                    }
+                                },
+                                {
+                                    "key": "user.anonymous_id",
+                                    "value": {
+                                        "stringValue": "07e25b7451f91087f90a6f8727f8eb66"
+                                    }
+                                },
+                                {
+                                    "key": "browser.instance.visibility_state",
+                                    "value": {
+                                        "stringValue": "visible"
+                                    }
+                                }
+                            ],
+                            "droppedAttributesCount": 0,
+                            "events": [],
+                            "droppedEventsCount": 0,
+                            "status": {
+                                "code": 0
+                            },
+                            "links": [],
+                            "droppedLinksCount": 0
+                        },
+                        {
+                            "traceId": "f0a9fa26e9f9e33cfdc2ee1eb11ef318",
+                            "spanId": "a962f95b1918b39e",
+                            "name": "button.click",
+                            "kind": 1,
+                            "startTimeUnixNano": "1785911606182000000",
+                            "endTimeUnixNano": "1785911606233900000",
+                            "attributes": [
+                                {
+                                    "key": "ui.component",
+                                    "value": {
+                                        "stringValue": "custom-span-button"
+                                    }
+                                },
+                                {
+                                    "key": "test",
+                                    "value": {
+                                        "boolValue": true
+                                    }
+                                },
+                                {
+                                    "key": "location.href",
+                                    "value": {
+                                        "stringValue": "http://localhost:8080/?nav=1785911605104"
+                                    }
+                                },
+                                {
+                                    "key": "deployment.environment",
+                                    "value": {
+                                        "stringValue": "local"
+                                    }
+                                },
+                                {
+                                    "key": "environment",
+                                    "value": {
+                                        "stringValue": "local"
+                                    }
+                                },
+                                {
+                                    "key": "app.version",
+                                    "value": {
+                                        "stringValue": "1.0.0"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.is_automated",
+                                    "value": {
+                                        "boolValue": false
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.is_bot",
+                                    "value": {
+                                        "boolValue": false
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.language",
+                                    "value": {
+                                        "stringValue": "en-GB"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.mobile",
+                                    "value": {
+                                        "boolValue": false
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.original",
+                                    "value": {
+                                        "stringValue": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.os.name",
+                                    "value": {
+                                        "stringValue": "macOS"
+                                    }
+                                },
+                                {
+                                    "key": "user_agent.os.version",
+                                    "value": {
+                                        "stringValue": "26.5.2"
+                                    }
+                                },
+                                {
+                                    "key": "splunk.rumSessionId",
+                                    "value": {
+                                        "stringValue": "ecaf929efb403947b597972ab3e39035"
+                                    }
+                                },
+                                {
+                                    "key": "user.anonymous_id",
+                                    "value": {
+                                        "stringValue": "07e25b7451f91087f90a6f8727f8eb66"
+                                    }
+                                },
+                                {
+                                    "key": "browser.instance.visibility_state",
+                                    "value": {
+                                        "stringValue": "visible"
+                                    }
+                                }
+                            ],
+                            "droppedAttributesCount": 0,
+                            "events": [],
+                            "droppedEventsCount": 0,
+                            "status": {
+                                "code": 0
+                            },
+                            "links": [],
+                            "droppedLinksCount": 0
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

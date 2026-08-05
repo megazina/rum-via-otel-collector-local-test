@@ -1,0 +1,91 @@
+extensions:
+  headers_setter:
+    headers:
+      - action: upsert
+        key: X-SF-Token
+        from_context: X-SF-Token
+        default_value: "${env:SPLUNK_RUM_ACCESS_TOKEN}"
+  health_check:
+    endpoint: 0.0.0.0:13133
+
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318
+        cors:
+          allowed_origins:
+            - "http://localhost:*"
+            - "http://127.0.0.1:*"
+            - "http://*:*"
+          allowed_headers:
+            - "*"
+
+processors:
+  memory_limiter:
+    check_interval: 2s
+    limit_mib: ${env:SPLUNK_MEMORY_LIMIT_MIB}
+  batch:
+    send_batch_size: 2048
+    timeout: 10s
+    metadata_keys:
+      - X-SF-Token
+  # Strip RUM OTLP metadata that breaks local HEC (wrong index, wrong Authorization token).
+  resource/replay_hec:
+    attributes:
+      - key: com.splunk.signalfx.access_token
+        action: delete
+      - key: com.splunk.index
+        action: delete
+      - key: com.splunk.source
+        action: delete
+      - key: com.splunk.sourcetype
+        action: delete
+
+exporters:
+  otlphttp/rum:
+    traces_endpoint: "https://rum-ingest.${env:SPLUNK_REALM}.observability.splunkcloud.com/v1/rumotlp"
+    logs_endpoint: "https://rum-ingest.${env:SPLUNK_REALM}.observability.splunkcloud.com/v1/rumreplay"
+    compression: gzip
+    headers:
+      X-SF-Token: "${env:SPLUNK_RUM_ACCESS_TOKEN}"
+    auth:
+      authenticator: headers_setter
+
+  splunk_hec/traces:
+    token: "${env:SPLUNK_HEC_TOKEN}"
+    endpoint: "http://splunk:8088/services/collector"
+    source: rum
+    sourcetype: otel
+    index: main
+    profiling_data_enabled: false
+    timeout: 30s
+    tls:
+      insecure: true
+
+  # Structured HEC JSON (not OTLP). Log body → event field; rr-web attrs → fields.
+  splunk_hec/replay:
+    token: "${env:SPLUNK_HEC_TOKEN}"
+    endpoint: "http://splunk:8088/services/collector"
+    source: rum-replay
+    sourcetype: otel:rum-replay
+    index: main
+    log_data_enabled: true
+    profiling_data_enabled: false
+    timeout: 30s
+    tls:
+      insecure: true
+
+service:
+  extensions: [headers_setter, health_check]
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [memory_limiter, batch]
+      exporters: [otlphttp/rum, splunk_hec/traces]
+    logs:
+      receivers: [otlp]
+      processors: [memory_limiter, resource/replay_hec, batch]
+      exporters: [otlphttp/rum, splunk_hec/replay]
