@@ -13,7 +13,7 @@ Send browser and mobile RUM through the collector. It receives OTLP from clients
 
 Secrets (HEC token, RUM access token) live on the collector, not in public client bundles when you use the `headers_setter` pattern below.
 
-**Local stack:** To validate or tune this config on a laptop, use [README.md](./README.md) (`docker-compose.yml`, `test-page/index.html`).
+**Local stack:** To validate or tune this config on a laptop, use [README-local-test.md](./README-local-test.md) (`docker-compose.yml`, `test-page/index.html`).
 
 ---
 
